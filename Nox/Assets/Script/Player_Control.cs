@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player_Move : MonoBehaviour {
+public class Player_Control : MonoBehaviour {
 
 	public int Player_Speed = 0;
 	public int Player_JumpPower = 0;
 	private Rigidbody2D rgBody = null;
-	private bool isGround = true;
+	private bool isJumped = false;
 
 	// Use this for initialization
 	void Start ()
@@ -40,9 +40,15 @@ public class Player_Move : MonoBehaviour {
 
 	void Jump()
 	{
-		if (Input.GetKeyDown (KeyCode.Space) && isGround)
+		if (isJumped && rgBody.velocity.y == 0)
+		{
+			isJumped = false;
+		}
+
+		if (Input.GetKeyDown (KeyCode.Space) && !isJumped)
 		{
 			rgBody.AddForce( new Vector2( 0.0f, Player_JumpPower ) );
+			isJumped = true;
 		}
 	}
 }
