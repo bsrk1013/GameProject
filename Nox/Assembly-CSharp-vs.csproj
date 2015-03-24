@@ -46,7 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\NoxProject\Script\Option.cs" />
      <Compile Include="Assets\NoxProject\Script\Player_Control.cs" />
+     <Compile Include="Assets\NoxProject\Script\StageManager.cs" />
+     <Compile Include="Assets\NoxProject\Script\TileManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
