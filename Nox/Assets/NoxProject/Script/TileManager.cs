@@ -4,7 +4,7 @@ using System.Collections;
 public class TileManager : MonoBehaviour {
 
 	public GameObject Tile;
-	private Vector2 [ , ] TilePos = new Vector2[12,16];
+	public GameObject Player;
 	private int[ , ] TileMap =
 	{{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -13,11 +13,12 @@ public class TileManager : MonoBehaviour {
 	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-	{0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
 	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+	{0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+	{0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 	{0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
 	{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}};
+	private Vector2 [ , ] TilePos = new Vector2[12,16];
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +28,6 @@ public class TileManager : MonoBehaviour {
 			for( int b = 0; 16 > b; ++b )
 			{
 				TilePos[ a, b ] = new Vector2( -5.12f + ( b * 0.64f ), 3.84f + ( -a * 0.64f ) );
-				Debug.Log(TilePos[ a, b ]);
 			}
 		}
 
@@ -38,6 +38,10 @@ public class TileManager : MonoBehaviour {
 				if( TileMap[a, b] == 1 )
 				{
 					Instantiate( Tile, new Vector3( TilePos[ a, b ].x + 0.32f, TilePos[ a, b ].y - 0.32f, 0.0f ), Quaternion.identity );
+				}
+				if( TileMap[a, b] == 2 )
+				{
+					Instantiate( Player, new Vector3( TilePos[ a, b ].x + 0.32f, TilePos[ a, b ].y - 0.32f, 0.0f ), Quaternion.identity );
 				}
 			}
 		}

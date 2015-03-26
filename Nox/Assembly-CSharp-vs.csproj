@@ -46,7 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\NoxProject\Script\ExitButton.cs" />
+     <Compile Include="Assets\NoxProject\Script\GameManager.cs" />
      <Compile Include="Assets\NoxProject\Script\Option.cs" />
+     <Compile Include="Assets\NoxProject\Script\PlayButton.cs" />
      <Compile Include="Assets\NoxProject\Script\Player_Control.cs" />
      <Compile Include="Assets\NoxProject\Script\StageManager.cs" />
      <Compile Include="Assets\NoxProject\Script\TileManager.cs" />
