@@ -5,6 +5,7 @@ public class ExitButton : MonoBehaviour {
 	
 	private SpriteRenderer rd;
 	public Sprite DownButton;
+	public Sprite MouseOver;
 	public Sprite Idle;
 	
 	// Use this for initialization
@@ -26,6 +27,11 @@ public class ExitButton : MonoBehaviour {
 	
 	void OnMouseOver()
 	{
-		Debug.Log ( "버튼 위" );
+		rd.sprite = MouseOver;
+	}
+
+	void OnMouseExit()
+	{
+		rd.sprite = Idle;
 	}
 }

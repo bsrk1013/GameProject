@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+	public int CurrentStage = 0;
 	public GameObject[] MenuArray = new GameObject[3];
 	private GameObject Main;
 

@@ -5,6 +5,7 @@ public class PlayButton : MonoBehaviour {
 
 	private SpriteRenderer rd;
 	public Sprite DownButton;
+	public Sprite MouseOver;
 	public Sprite Idle;
 	public bool isClick;
 
@@ -28,6 +29,11 @@ public class PlayButton : MonoBehaviour {
 
 	void OnMouseOver()
 	{
-		Debug.Log ( "버튼 위" );
+		rd.sprite = MouseOver;
+	}
+
+	void OnMouseExit()
+	{
+		rd.sprite = Idle;
 	}
 }
