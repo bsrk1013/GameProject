@@ -46,12 +46,18 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\NoxProject\Script\ExitButton.cs" />
+     <Compile Include="Assets\NoxProject\Script\Button\ExitButton.cs" />
+     <Compile Include="Assets\NoxProject\Script\Button\IButton.cs" />
+     <Compile Include="Assets\NoxProject\Script\Button\MainMenuButton.cs" />
+     <Compile Include="Assets\NoxProject\Script\Button\PlayButton.cs" />
+     <Compile Include="Assets\NoxProject\Script\Button\RePlayButton.cs" />
+     <Compile Include="Assets\NoxProject\Script\EnermyMoving.cs" />
      <Compile Include="Assets\NoxProject\Script\GameManager.cs" />
      <Compile Include="Assets\NoxProject\Script\Option.cs" />
-     <Compile Include="Assets\NoxProject\Script\PlayButton.cs" />
-     <Compile Include="Assets\NoxProject\Script\PlayerAction.cs" />
-     <Compile Include="Assets\NoxProject\Script\PlayerControler.cs" />
+     <Compile Include="Assets\NoxProject\Script\Player\PlayerAction.cs" />
+     <Compile Include="Assets\NoxProject\Script\Player\PlayerControler.cs" />
+     <Compile Include="Assets\NoxProject\Script\Player\PlayerItem.cs" />
+     <Compile Include="Assets\NoxProject\Script\Player\PlayerState.cs" />
      <Compile Include="Assets\NoxProject\Script\StageManager.cs" />
      <Compile Include="Assets\NoxProject\Script\TileManager.cs" />
  <Reference Include="UnityEngine.UI">
