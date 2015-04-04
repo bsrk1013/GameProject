@@ -51,7 +51,8 @@
      <Compile Include="Assets\NoxProject\Script\Button\MainMenuButton.cs" />
      <Compile Include="Assets\NoxProject\Script\Button\PlayButton.cs" />
      <Compile Include="Assets\NoxProject\Script\Button\RePlayButton.cs" />
-     <Compile Include="Assets\NoxProject\Script\EnermyMoving.cs" />
+     <Compile Include="Assets\NoxProject\Script\Enermy\EnermyMoving.cs" />
+     <Compile Include="Assets\NoxProject\Script\Enermy\FindPlayer.cs" />
      <Compile Include="Assets\NoxProject\Script\GameManager.cs" />
      <Compile Include="Assets\NoxProject\Script\Option.cs" />
      <Compile Include="Assets\NoxProject\Script\Player\PlayerAction.cs" />

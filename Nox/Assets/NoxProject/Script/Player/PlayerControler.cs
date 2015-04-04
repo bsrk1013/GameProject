@@ -24,7 +24,7 @@ public class PlayerControler : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
-		if (GetComponent<PlayerState> ().isDie) {
+		if (GetComponent<PlayerState> ().isDied) {
 			return;
 		}
 

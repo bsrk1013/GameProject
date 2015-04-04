@@ -51,6 +51,14 @@ public class PlayerAction : MonoBehaviour {
 		}
 	}
 
+	void OnTriggerEnter2D( Collider2D _Other )
+	{
+		if (_Other.tag == "Enermy")
+		{
+			GetComponent<PlayerState>().isDied = true;
+		}
+	}
+
 	void OnTriggerExit2D( Collider2D _Other )
 	{
 		if (_Other.tag == "Ladder" || _Other.tag == "LadderTop" )

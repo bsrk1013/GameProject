@@ -39,8 +39,16 @@ public class GameManager : MonoBehaviour {
 		}
 
 		if (MenuArray [(int)MENU.PLAY] == obj) {
-			if( GameObject.Find("Player(Clone)").GetComponent<PlayerState>().isDie ){
+			if( GameObject.Find("Player(Clone)").GetComponent<PlayerState>().isDied ){
 				Main = MenuArray [(int)MENU.DIE];
+				Instantiate (Main);
+			} else if( CurrentStage > GetComponent<StageManager>().Stage1.Count )
+			{
+				Destroy( GameObject.Find( "PlayBackGround(Clone)" ) );
+				GetComponent<TileManager>().DeleteStage();
+				GetComponent<TileManager>().isLantern = false;
+				Destroy( GameObject.Find( "DieBackGround(Clone)" ) );
+				Main = MenuArray [(int)MENU.MAIN];
 				Instantiate (Main);
 			}
 		}
@@ -56,6 +64,7 @@ public class GameManager : MonoBehaviour {
 			} else if(GameObject.Find ("RePlayButton").GetComponent<RePlayButton>().isClick){
 				Destroy( GameObject.Find( "DieBackGround(Clone)" ) );
 				GetComponent<TileManager>().CreateStage( CurrentStage );
+				PlayerItem.CurrentIntensity = GameObject.Find( "Player(Clone)" ).GetComponent<PlayerItem>().DefaultIntensity / 2;
 				Main = MenuArray [(int)MENU.PLAY];
 			}
 		}

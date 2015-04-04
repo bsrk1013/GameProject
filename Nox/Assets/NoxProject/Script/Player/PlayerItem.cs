@@ -7,7 +7,7 @@ public class PlayerItem : MonoBehaviour {
 	private GameObject[] MatchLight = new GameObject[2];
 	private int Lightz = -1;
 	public int DefaultIntensity;
-	public float CurrentIntensity;
+	public static float CurrentIntensity = 1;
 	public float DecreaseIntensity;
 
 
@@ -18,7 +18,7 @@ public class PlayerItem : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		if (GetComponent<PlayerState> ().isDie)
+		if (GetComponent<PlayerState> ().isDied)
 		{
 			return;
 		}
@@ -41,10 +41,26 @@ public class PlayerItem : MonoBehaviour {
 			MatchLight[i].GetComponent<Light>().intensity = 1.0f;
 			Lightz *= -1;
 		}
+
+		SetCurrentIntensity ();
+	}
+
+	public void SetCurrentIntensity ()
+	{
+		for (int i = 0; i < MatchLight.Length; ++i)
+		{
+			MatchLight[i].GetComponent<Light>().intensity = CurrentIntensity;
+		}
 	}
 
 	public void SetDefaultIntensity()
 	{
+		PlayerState.isDamaged = false;
+		GetComponent<AudioSource> ().Stop ();
+		GameObject.Find( "PlayBackGround(Clone)" ).GetComponent<AudioSource>().volume = 1.0f;
+		PlayerState.PlayerHP = 10.0f;
+		PlayerState.isDamaged = false;
+
 		for (int i = 0; i < MatchLight.Length; ++i)
 		{
 			MatchLight[i].GetComponent<Light>().intensity = DefaultIntensity;

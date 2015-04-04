@@ -10,7 +10,7 @@ public class TileManager : MonoBehaviour {
 		PLAYER,
 		TILE,
 		WALL,
-		ENERMYSPAWN,
+		RAT,
 		MATCHITEM,
 		DOOR1,
 		DOOR2,
@@ -91,7 +91,11 @@ public class TileManager : MonoBehaviour {
 			ObjectList.Add (Instantiate (ObjectArray [_Number], new Vector3 (_Pos.x + 0.32f, _Pos.y - 3.84f, 1.0f), Quaternion.identity) as GameObject);
 		} else if( _Number == (int)OBJECTNUMBER.MATCHITEM ) {
 			ObjectList.Add (Instantiate (ObjectArray [_Number], new Vector3 (_Pos.x + 0.16f, _Pos.y - 0.32f, 1.0f), Quaternion.identity) as GameObject );
-		} else {
+		} else if( _Number == (int)OBJECTNUMBER.RAT )
+		{
+			ObjectList.Add (Instantiate (ObjectArray [_Number], new Vector3 (_Pos.x + 1.28f, _Pos.y - 0.64f, 1.0f), Quaternion.identity) as GameObject );
+		}
+		else {
 			if( ObjectArray [_Number] == null )
 			{
 				return;
