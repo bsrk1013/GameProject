@@ -18,7 +18,7 @@ public class PlayerItem : MonoBehaviour {
 
 	void FixedUpdate()
 	{
-		if (GetComponent<PlayerState> ().isDied)
+		if (GetComponent<PlayerState> ().isDied || !GetComponent<PlayerState> ().isMovable )
 		{
 			return;
 		}

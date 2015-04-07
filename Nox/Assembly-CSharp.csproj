@@ -50,9 +50,15 @@
      <Compile Include="Assets\NoxProject\Script\Button\IButton.cs" />
      <Compile Include="Assets\NoxProject\Script\Button\MainMenuButton.cs" />
      <Compile Include="Assets\NoxProject\Script\Button\PlayButton.cs" />
+     <Compile Include="Assets\NoxProject\Script\Button\ProducerButton.cs" />
      <Compile Include="Assets\NoxProject\Script\Button\RePlayButton.cs" />
-     <Compile Include="Assets\NoxProject\Script\Enermy\EnermyMoving.cs" />
-     <Compile Include="Assets\NoxProject\Script\Enermy\FindPlayer.cs" />
+     <Compile Include="Assets\NoxProject\Script\Enermy\AirEnermyMoving.cs" />
+     <Compile Include="Assets\NoxProject\Script\Enermy\AirFind.cs" />
+     <Compile Include="Assets\NoxProject\Script\Enermy\DieRange.cs" />
+     <Compile Include="Assets\NoxProject\Script\Enermy\GroundEnermyMoving.cs" />
+     <Compile Include="Assets\NoxProject\Script\Enermy\GroundFind.cs" />
+     <Compile Include="Assets\NoxProject\Script\EventZone.cs" />
+     <Compile Include="Assets\NoxProject\Script\FadeIn.cs" />
      <Compile Include="Assets\NoxProject\Script\GameManager.cs" />
      <Compile Include="Assets\NoxProject\Script\Option.cs" />
      <Compile Include="Assets\NoxProject\Script\Player\PlayerAction.cs" />

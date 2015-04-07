@@ -11,6 +11,14 @@ public class PlayerAction : MonoBehaviour {
 	{
 	}
 
+	void OnTriggerEnter2D ( Collider2D _Other )
+	{
+		if (_Other.tag == "Ended")
+		{
+			GameObject.Find ("GameManager").GetComponent<GameManager>().isEnded = true;
+		}
+	}
+
 	void OnTriggerStay2D( Collider2D _Other )
 	{
 		if (Input.GetKeyDown (KeyCode.W))
@@ -48,14 +56,6 @@ public class PlayerAction : MonoBehaviour {
 		if( _Other.tag == "Ladder" || _Other.tag == "LadderTop" )
 		{
 			GetComponent<PlayerState>().isClimbed = true;
-		}
-	}
-
-	void OnTriggerEnter2D( Collider2D _Other )
-	{
-		if (_Other.tag == "Enermy")
-		{
-			GetComponent<PlayerState>().isDied = true;
 		}
 	}
 

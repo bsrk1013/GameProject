@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: 54aeb2a69e0657641a560af22b4bd6be
-timeCreated: 1428140868
+timeCreated: 1428244160
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Rat_0
+    21300002: Rat_1
+    21300004: Rat_2
+    21300006: Rat_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,14 +34,14 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   rGBM: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -48,7 +52,47 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Rat_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 235
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rat_1
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 3
+        width: 235
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rat_2
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 0
+        width: 235
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Rat_3
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 0
+        width: 235
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
   assetBundleName: 

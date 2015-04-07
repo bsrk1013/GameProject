@@ -7,6 +7,7 @@ public class PlayerState : MonoBehaviour {
 	public static bool isDamaged;	//피해받고 있는지 체크
 	public bool isJumped;	//점프 체크
 	public bool isClimbed;	//사다리위 체크
+	public bool isMovable;
 	public static float PlayerHP;
 	private float Damage;
 
@@ -16,6 +17,7 @@ public class PlayerState : MonoBehaviour {
 		isJumped = false;
 		isClimbed = false;
 		isDamaged = false;
+		isMovable = true;
 		PlayerHP = 10;
 		Damage = 0.6f;
 	}
@@ -26,6 +28,10 @@ public class PlayerState : MonoBehaviour {
 		Die ();
 
 		if (isClimbed) {
+			if( isJumped )
+			{
+				return;
+			}
 			GetComponent<Rigidbody2D> ().gravityScale = 0;
 		} else {
 			GetComponent<Rigidbody2D> ().gravityScale = 1;

@@ -8,10 +8,13 @@ public class GameManager : MonoBehaviour {
 		MAIN = 0,
 		PLAY,
 		DIE,
+		PRODUCE,
+		END,
 		COUNT
 	}
 
 	public int CurrentStage = 0;
+	public bool isEnded = false;
 	public GameObject[] MenuArray = new GameObject[( int )MENU.COUNT];
 	private GameObject Main;
 
@@ -25,6 +28,19 @@ public class GameManager : MonoBehaviour {
 	void FixedUpdate ()
 	{
 		ChangeMenu ( Main );
+
+		if (Input.GetKeyDown (KeyCode.Escape) && Main == MenuArray [(int)MENU.PRODUCE] )
+		{
+			Destroy( GameObject.Find( "ProductBackGround(Clone)" ) );
+			Main = MenuArray [(int)MENU.MAIN];
+			Instantiate (Main);
+		} else if( Input.GetKeyDown (KeyCode.Escape) && Main == MenuArray [(int)MENU.END] )
+		{
+			isEnded = false;
+			Destroy( GameObject.Find( "EndBackGround(Clone)" ) );
+			Main = MenuArray [(int)MENU.MAIN];
+			Instantiate (Main);
+		}
 	}
 
 	void ChangeMenu( GameObject obj )
@@ -35,27 +51,32 @@ public class GameManager : MonoBehaviour {
 				Main = MenuArray [(int)MENU.PLAY];
 				Instantiate (Main);
 				GetComponent<TileManager>().CreateStage( CurrentStage );
+			} else if( GameObject.Find ("ProducerButton").GetComponent<ProducerButton> ().isClick )
+			{
+				Destroy (GameObject.Find ("MainBackGround(Clone)"));
+				Main = MenuArray [(int)MENU.PRODUCE];
+				Instantiate (Main);
 			}
 		}
 
-		if (MenuArray [(int)MENU.PLAY] == obj) {
+		else if (MenuArray [(int)MENU.PLAY] == obj) {
 			if( GameObject.Find("Player(Clone)").GetComponent<PlayerState>().isDied ){
 				Main = MenuArray [(int)MENU.DIE];
 				Instantiate (Main);
-			} else if( CurrentStage > GetComponent<StageManager>().Stage1.Count )
+			} else if( isEnded )
 			{
+				PlayerItem.CurrentIntensity = 1.0f;
 				Destroy( GameObject.Find( "PlayBackGround(Clone)" ) );
 				GetComponent<TileManager>().DeleteStage();
-				GetComponent<TileManager>().isLantern = false;
-				Destroy( GameObject.Find( "DieBackGround(Clone)" ) );
-				Main = MenuArray [(int)MENU.MAIN];
+				Main = MenuArray [(int)MENU.END];
 				Instantiate (Main);
 			}
 		}
 
-		if (MenuArray [(int)MENU.DIE] == obj) {
+		else if (MenuArray [(int)MENU.DIE] == obj) {
 			if( GameObject.Find ("MainMenuButton").GetComponent<MainMenuButton> ().isClick ) {
 				Destroy( GameObject.Find( "PlayBackGround(Clone)" ) );
+				PlayerItem.CurrentIntensity = 1.0f;
 				GetComponent<TileManager>().DeleteStage();
 				GetComponent<TileManager>().isLantern = false;
 				Destroy( GameObject.Find( "DieBackGround(Clone)" ) );
