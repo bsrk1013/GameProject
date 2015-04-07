@@ -5,6 +5,7 @@ public class FadeIn : MonoBehaviour {
 
 	private float Alpha;
 	public float Speed;
+	public bool isAutoDel;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,10 @@ public class FadeIn : MonoBehaviour {
 			Alpha += Speed * Time.deltaTime;
 			GetComponent<SpriteRenderer> ().color = new Vector4 ( 255.0f, 255.0f, 255.0f, Alpha );
 		}else {
-			Destroy( this.gameObject );
+			if( isAutoDel )
+			{
+				Destroy( this.gameObject );
+			}
 		}
 	}
 }

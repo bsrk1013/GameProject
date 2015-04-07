@@ -18,18 +18,6 @@ public class EventZone : MonoBehaviour {
 	void FixedUpdate()
 	{
 		if (!GetComponent<AudioSource> ().loop) {
-			/*
-			if( GameObject.Find( "Player(Clone)" ).transform.position.x - 5.12f < -5.12f )
-			{
-				transform.position = new Vector3( 0.0f, 0.0f, -3.0f);
-			}else if( GameObject.Find( "Player(Clone)" ).transform.position.x + 5.12f > GameObject.Find ( "GameManager" ).GetComponent<TileManager>().MaxWidth )
-			{
-				transform.position = new Vector3( 0.0f, 0.0f, -3.0f);
-			}else
-			{
-				transform.position = new Vector3( GameObject.Find( "Player(Clone)" ).transform.position.x, 0.0f, -3.0f);
-			}
-			*/
 			transform.position = new Vector3( 0.0f, 0.0f, -3.0f );
 			Camera.main.transform.position = new Vector3( 0.0f, 0.0f, Camera.main.transform.position.z );
 		}
@@ -40,6 +28,7 @@ public class EventZone : MonoBehaviour {
 
 		if ( PlayTime < 0 ) {
 			GameObject.Find( "Player(Clone)" ).GetComponent<PlayerState>().isMovable = true;
+			Camera.main.transform.position = new Vector3( GameObject.Find( "Player(Clone)" ).transform.position.x - 2.60f, 0, Camera.main.transform.position.z );
 			GameObject.Find( "Player(Clone)" ).GetComponent<PlayerControler>().MoveCamera();
 			Destroy( this.gameObject );
 		}

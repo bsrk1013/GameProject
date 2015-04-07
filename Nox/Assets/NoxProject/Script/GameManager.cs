@@ -83,6 +83,7 @@ public class GameManager : MonoBehaviour {
 				Destroy( GameObject.Find( "PlayBackGround(Clone)" ) );
 				PlayerItem.CurrentIntensity = 1.0f;
 				GetComponent<TileManager>().DeleteStage();
+				CurrentStage = 0;
 				GetComponent<TileManager>().isLantern = false;
 				Destroy( GameObject.Find( "DieBackGround(Clone)" ) );
 				Main = MenuArray [(int)MENU.MAIN];

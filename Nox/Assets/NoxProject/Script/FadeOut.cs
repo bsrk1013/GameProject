@@ -5,6 +5,7 @@ public class FadeOut : MonoBehaviour {
 
 	private float Alpha;
 	public float Speed;
+	public bool isAutoDel;
 
 	
 	// Use this for initialization
@@ -18,8 +19,11 @@ public class FadeOut : MonoBehaviour {
 		if (GetComponent<SpriteRenderer> ().color.a > 0.0f) {
 			Alpha -= Speed * Time.deltaTime;
 			GetComponent<SpriteRenderer> ().color = new Vector4 (255.0f, 255.0f, 255.0f, Alpha);
-		} else {
-			Destroy( this.gameObject );
+		} else{
+			if( isAutoDel )
+			{
+				Destroy( this.gameObject );
+			}
 		}
 	}
 }
