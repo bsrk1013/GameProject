@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FadeIn : MonoBehaviour {
 
-	public float Alpha;
+	private float Alpha;
 	public float Speed;
 
 	// Use this for initialization
@@ -19,6 +19,8 @@ public class FadeIn : MonoBehaviour {
 		{
 			Alpha += Speed * Time.deltaTime;
 			GetComponent<SpriteRenderer> ().color = new Vector4 ( 255.0f, 255.0f, 255.0f, Alpha );
+		}else {
+			Destroy( this.gameObject );
 		}
 	}
 }

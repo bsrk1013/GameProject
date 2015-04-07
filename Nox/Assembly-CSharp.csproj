@@ -59,6 +59,7 @@
      <Compile Include="Assets\NoxProject\Script\Enermy\GroundFind.cs" />
      <Compile Include="Assets\NoxProject\Script\EventZone.cs" />
      <Compile Include="Assets\NoxProject\Script\FadeIn.cs" />
+     <Compile Include="Assets\NoxProject\Script\FadeOut.cs" />
      <Compile Include="Assets\NoxProject\Script\GameManager.cs" />
      <Compile Include="Assets\NoxProject\Script\Option.cs" />
      <Compile Include="Assets\NoxProject\Script\Player\PlayerAction.cs" />

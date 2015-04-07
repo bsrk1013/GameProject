@@ -1,13 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\NoxProject\Script\StageManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\NoxProject\Script\GameManager.cs">
     <Files>
-      <File FileName="Assets\NoxProject\Script\StageManager.cs" Line="125" Column="166" />
+      <File FileName="Assets\NoxProject\Script\FadeOut.cs" Line="12" Column="16" />
+      <File FileName="Assets\NoxProject\Script\FadeIn.cs" Line="1" Column="1" />
+      <File FileName="Assets\NoxProject\Script\StageManager.cs" Line="1" Column="1" />
       <File FileName="Assets\NoxProject\Script\EventZone.cs" Line="1" Column="1" />
-      <File FileName="Assets\NoxProject\Script\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\NoxProject\Script\GameManager.cs" Line="58" Column="25" />
       <File FileName="Assets\NoxProject\Script\Player\PlayerState.cs" Line="1" Column="1" />
       <File FileName="Assets\NoxProject\Script\TileManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\NoxProject\Script\FadeIn.cs" Line="1" Column="1" />
       <File FileName="Assets\NoxProject\Script\Player\PlayerControler.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

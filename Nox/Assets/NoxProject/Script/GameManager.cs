@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
 		COUNT
 	}
 
+	public GameObject Example;
 	public int CurrentStage = 0;
 	public bool isEnded = false;
 	public GameObject[] MenuArray = new GameObject[( int )MENU.COUNT];
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour {
 				Main = MenuArray [(int)MENU.PLAY];
 				Instantiate (Main);
 				GetComponent<TileManager>().CreateStage( CurrentStage );
+				Instantiate( Example );
 			} else if( GameObject.Find ("ProducerButton").GetComponent<ProducerButton> ().isClick )
 			{
 				Destroy (GameObject.Find ("MainBackGround(Clone)"));
