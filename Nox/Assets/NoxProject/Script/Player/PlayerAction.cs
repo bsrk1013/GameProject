@@ -50,7 +50,7 @@ public class PlayerAction : MonoBehaviour {
 			} else if( _Other.tag == "Match" )
 			{
 				GetComponent<PlayerItem>().SetDefaultIntensity();
-				Destroy( GameObject.Find( "MatchItem(Clone)" ) );
+				Destroy( _Other.gameObject );
 			}
 		}
 		if( _Other.tag == "Ladder" || _Other.tag == "LadderTop" )

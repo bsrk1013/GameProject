@@ -1,10 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\NoxProject\Script\Player\PlayerState.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\NoxProject\Script\StageManager.cs">
     <Files>
-      <File FileName="Assets\NoxProject\Script\Player\PlayerControler.cs" Line="105" Column="1" />
-      <File FileName="Assets\NoxProject\Script\Player\PlayerAction.cs" Line="61" Column="2" />
-      <File FileName="Assets\NoxProject\Script\Player\PlayerState.cs" Line="42" Column="40" />
+      <File FileName="Assets\NoxProject\Script\StageManager.cs" Line="125" Column="166" />
+      <File FileName="Assets\NoxProject\Script\EventZone.cs" Line="1" Column="1" />
+      <File FileName="Assets\NoxProject\Script\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\NoxProject\Script\Player\PlayerState.cs" Line="1" Column="1" />
+      <File FileName="Assets\NoxProject\Script\TileManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\NoxProject\Script\FadeIn.cs" Line="1" Column="1" />
+      <File FileName="Assets\NoxProject\Script\Player\PlayerControler.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

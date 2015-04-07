@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 		DIE,
 		PRODUCE,
 		END,
+		STORY,
 		COUNT
 	}
 
@@ -29,15 +30,17 @@ public class GameManager : MonoBehaviour {
 	{
 		ChangeMenu ( Main );
 
-		if (Input.GetKeyDown (KeyCode.Escape) && Main == MenuArray [(int)MENU.PRODUCE] )
-		{
-			Destroy( GameObject.Find( "ProductBackGround(Clone)" ) );
+		if (Input.GetKeyDown (KeyCode.Escape) && Main == MenuArray [(int)MENU.PRODUCE]) {
+			Destroy (GameObject.Find ("ProductBackGround(Clone)"));
 			Main = MenuArray [(int)MENU.MAIN];
 			Instantiate (Main);
-		} else if( Input.GetKeyDown (KeyCode.Escape) && Main == MenuArray [(int)MENU.END] )
-		{
+		} else if (Input.GetKeyDown (KeyCode.Escape) && Main == MenuArray [(int)MENU.END]) {
 			isEnded = false;
-			Destroy( GameObject.Find( "EndBackGround(Clone)" ) );
+			Destroy (GameObject.Find ("EndBackGround(Clone)"));
+			Main = MenuArray [(int)MENU.STORY];
+			Instantiate (Main);
+		} else if (Input.GetKeyDown (KeyCode.Escape) && Main == MenuArray [(int)MENU.STORY]) {
+			Destroy (GameObject.Find ("StoryBackGround(Clone)"));
 			Main = MenuArray [(int)MENU.MAIN];
 			Instantiate (Main);
 		}

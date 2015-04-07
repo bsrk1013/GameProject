@@ -48,7 +48,7 @@ public class PlayerControler : MonoBehaviour {
 		Jump ();
 	}
 
-	void MoveCamera()
+	public void MoveCamera()
 	{  
 		if (transform.position.x - 5.12f > -5.12f && transform.position.x + 5.12f < GameObject.Find ("GameManager").GetComponent<TileManager> ().MaxWidth)
 			Camera.main.transform.position = new Vector3 (transform.position.x, 0.0f, Camera.main.transform.position.z);
@@ -76,12 +76,14 @@ public class PlayerControler : MonoBehaviour {
 		}
 		if (Input.GetKey (KeyCode.W) && GetComponent<PlayerState> ().isClimbed )
 		{
+			rgBody.gravityScale = 0;
 			transform.Translate( Vector2.up * Player_Speed * Time.deltaTime );
 			rgBody.velocity = new Vector2( 0.0f, 0.0f );
 			Change_State( STATE.CLIMBUP );
 		}
 		else if (Input.GetKey (KeyCode.S) && GetComponent<PlayerState> ().isClimbed )
 		{
+			rgBody.gravityScale = 0;
 			transform.Translate( -Vector2.up * Player_Speed * Time.deltaTime );
 			rgBody.velocity = new Vector2( 0.0f, 0.0f );
 			Change_State( STATE.CLIMBDOWN );
@@ -102,7 +104,6 @@ public class PlayerControler : MonoBehaviour {
 			Change_State( STATE.JUMP );
 			rgBody.AddForce( transform.up * Player_JumpPower );
 			GetComponent<PlayerState>().isJumped = true;
-			rgBody.gravityScale = 1.0f;
 			return;
 		}
 

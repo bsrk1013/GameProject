@@ -30,6 +30,7 @@ public class PlayerState : MonoBehaviour {
 		if (isClimbed) {
 			if( isJumped )
 			{
+				GetComponent<Rigidbody2D> ().gravityScale = 1;
 				return;
 			}
 			GetComponent<Rigidbody2D> ().gravityScale = 0;
