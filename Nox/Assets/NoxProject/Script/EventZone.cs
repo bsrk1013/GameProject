@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EventZone : MonoBehaviour {
 	public AudioClip Scrim;
-	public Sprite EventPhoto;
+	public Sprite[] EventPhoto = new Sprite[2];
 	private float PlayTime;
 	private int MinusTime;
 	private bool isEventOn;
@@ -18,8 +18,8 @@ public class EventZone : MonoBehaviour {
 	void FixedUpdate()
 	{
 		if (!GetComponent<AudioSource> ().loop) {
-			transform.position = new Vector3( 0.0f, 0.0f, -3.0f );
-			Camera.main.transform.position = new Vector3( 0.0f, 0.0f, Camera.main.transform.position.z );
+			transform.position = new Vector3( Camera.main.transform.position.x, 0.0f, -3.0f );
+			//Camera.main.transform.position = new Vector3( 0.0f, 0.0f, Camera.main.transform.position.z );
 		}
 
 		if (isEventOn) {
@@ -28,8 +28,6 @@ public class EventZone : MonoBehaviour {
 
 		if ( PlayTime < 0 ) {
 			GameObject.Find( "Player(Clone)" ).GetComponent<PlayerState>().isMovable = true;
-			Camera.main.transform.position = new Vector3( GameObject.Find( "Player(Clone)" ).transform.position.x - 2.60f, 0, Camera.main.transform.position.z );
-			GameObject.Find( "Player(Clone)" ).GetComponent<PlayerControler>().MoveCamera();
 			Destroy( this.gameObject );
 		}
 	}
@@ -41,7 +39,7 @@ public class EventZone : MonoBehaviour {
 			GetComponent<AudioSource>().clip = Scrim;
 			GetComponent<AudioSource>().loop = false;
 			GetComponent<AudioSource>().Play();
-			GetComponent<SpriteRenderer>().sprite = EventPhoto;
+			GetComponent<SpriteRenderer>().sprite = EventPhoto[Random.Range( 0, 2 )];
 			GameObject.Find( "Player(Clone)" ).GetComponent<PlayerState>().isMovable = false;
 			isEventOn = true;
 		}
